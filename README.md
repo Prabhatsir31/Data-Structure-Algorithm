@@ -72,8 +72,3 @@ If you encounter bugs or have feature requests, please open an issue on [GitHub 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgements
-
-- Inspired by leading computer science courses, coding interview prep guides, and open-source contributions.
-- Thanks to all contributors and the open-source community!
