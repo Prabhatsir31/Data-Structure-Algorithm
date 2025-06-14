@@ -50,7 +50,7 @@ const App = () => {
         return <Sorting type={selected} onBack={handleBack} />;
       default:
         return <div 
-        // style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1.25rem', color: '#666' }}
+        style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1.25rem', color: '#666' }}
         >
           {/* Please select a data structure to view operations. */}
           <Home />
