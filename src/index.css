@@ -357,14 +357,38 @@ button:focus-visible {
 .stack-element {
     background: #6f42c1; /* Primary color */
     color: white;
-    padding: 10px 20px;
+    padding: 10px 2%; /* Use percentage for horizontal padding */
     margin: 5px 0;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    width: 100px; /* Adjust width as needed */
+    width: 90%; /* Use percentage for width to allow responsiveness */
+    max-width: 200px; /* Set a max width for larger screens */
     text-align: center;
 }
 
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+    .stack-element {
+        padding: 8px 5%; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 601px) and (max-width: 1200px) {
+    .stack-element {
+        padding: 10px 4%; /* Adjust padding for medium screens */
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
+/* Media Query for Extra Large Screens */
+@media (min-width: 1201px) {
+    .stack-element {
+        padding: 10px 2%; /* Maintain padding for larger screens */
+        font-size: 18px; /* Adjust font size */
+    }
+}
 
 /* Queue Diagram CSS */
 .queue-container {
@@ -383,6 +407,7 @@ button:focus-visible {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow items to wrap in smaller screens */
 }
 
 .queue-elements {
@@ -392,41 +417,62 @@ button:focus-visible {
 
 .queue-diagram {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Default column layout for smaller screens */
 }
 
 .queue-diagram-visual-horizontal {
     display: flex;
-    flex-direction: row; /* Change to row for horizontal layout */
+    flex-direction: row; /* Horizontal layout for larger screens */
     justify-content: center; /* Center the elements */
     align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .queue-element {
     background: #6f42c1; /* Primary color */
     color: white;
     padding: 10px 20px;
-    margin: 0 5px; /* Adjust margin for horizontal spacing */
+    margin: 5px; /* Adjusted margin for wrapping */
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    width: 60px; /* Adjust width as needed */
+    width: 60px; /* Initial width */
     text-align: center;
 }
 
-.output-text {
-    margin-top: 10px;
-    color: var(--secondary);
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .input-container {
+        flex-direction: column; /* Stack inputs on smaller devices */
+    }
+
+    .queue-element {
+        width: 80%; /* Adjust width for smaller devices */
+    }
+
+    .queue-diagram {
+        flex-direction: column; /* Stack diagrams vertically */
+    }
+}
+
+@media (min-width: 769px) {
+    .queue-diagram {
+        flex-direction: row; /* Switch back to row layout for larger devices */
+    }
 }
 
 /* LinkedList Diagram CSS */
 .container {
     padding: 20px;
-    /* background: #f8f9fa; */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Set a max width for larger screens */
+    margin: auto; /* Center the container */
 }
 
 .input-container {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -442,6 +488,8 @@ button:focus-visible {
     background-color: #6f42c1;
     color: white;
     cursor: pointer;
+    flex: 1; /* Grow to fill available space */
+    min-width: 120px; /* Ensure buttons have a minimum width */
 }
 
 .btn-back {
@@ -452,15 +500,19 @@ button:focus-visible {
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 5px;
+    flex: 1; /* Allow input to grow */
+    min-width: 200px; /* Ensure input has a minimum width */
 }
 
 .linked-list-diagram {
     margin-top: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
 }
 
 .linked-list-visual {
     display: flex;
-    flex-direction: row; /* Horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center the items */
     align-items: center; /* Center items vertically */
 }
 
@@ -468,10 +520,37 @@ button:focus-visible {
     background: #6f42c1; /* Primary color */
     color: white;
     padding: 10px 20px;
-    margin: 0 5px; /* Adjust margin for spacing */
+    margin: 5px; /* Adjust margin for spacing */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
+    flex: 0 1 100px; /* Flex-basis with a minimum size */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .input-container {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    
+    .btn, .btn-small, .btn-back {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .input-style {
+        width: 100%; /* Full width input */
+    }
+
+    .linked-list-node {
+        flex: 0 1 80px; /* Decrease width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .linked-list-node {
+        padding: 5px 10px; /* Adjust padding for smaller screens */
+        margin: 2px; /* Adjust margin for smaller screens */
+    }
 }
 
 /* Tree Diagram CSS */
@@ -495,57 +574,149 @@ button:focus-visible {
   margin: 5px;
   border: 1px solid #fff;
   border-radius: 5px;
-  /* background-color: #f9f9f9; */
 }
 
 .children {
   display: flex;
-  justify-content: space-between; 
-  /* flex-wrap: wrap;  */
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   margin-top: 10px;
 }
-   
 
-.left-child {
-  margin-right: 20px;
-}
-
+.left-child,
 .right-child {
-  margin-left: 20px;
+  flex: 1 1 100%; /* Allow children to flex */
+  margin: 5px; /* Add margin for space */
 }
 
 .tree-diagram {
   margin-top: 20px;
   padding: 10px;
-  /* Removed fixed width */
   border: 1px solid #ccc;
   border-radius: 5px;
   display: inline-block; /* Ensure it takes only necessary space */
 }
-   
 
 .btn-back {
   background-color: #dc3545;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn-back:hover {
   background-color: #c82333;
 }
 
+@media (max-width: 768px) {
+  .input-style {
+    width: 90%; /* Increase input width on smaller screens */
+  }
+  
+  .tree-node {
+    min-width: 40%; /* Allow flexibility */
+  }
+
+  .children {
+    flex-direction: column; /* Stack nodes vertically on small screens */
+    align-items: center; /* Center align children */
+  }
+
+  .left-child, .right-child {
+    flex: 1; /* Allow full width */
+  }
+}
+
 @media (max-width: 576px) {
-    .tree-node {
-        min-width: 50px; /* Maintain visibility */
-        flex-grow: 1; /* Allow flexibility on smaller screens */
-        flex-basis: calc(100% - 20px); /* Use full width while factoring margin */
-    }
-    
-    .children {
-        flex-direction: column; /* Stack nodes vertically on small screens */
-    }
+  .tree-node {
+    min-width: 50px; /* Maintain visibility */
+    flex-basis: calc(100% - 20px); /* Use full width factoring in margin */
+  }
+
+  .children {
+    flex-direction: column; /* Stack nodes vertically on very small screens */
+  }
 }
 
 /* Home */
-.home img {
-  height: 400px;
-  width: 500px;
+.home {
+  margin: 0 auto;                  /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* Vertically center */
+  align-items: center;             /* Horizontally center */
+  height: 82vh;                   
+  width: 90%;                      /* Use percentage for responsiveness */
+  max-width: 1200px;              /* Set a maximum width */
+  text-align: center;
+  background-color: #f0f4f8;
+  padding: 20px;                  /* Add padding for content */
+  box-sizing: border-box;          /* Include padding in width */
+}
+
+/* Media Queries for Additional Responsiveness */
+@media (max-width: 768px) {
+  .home {
+    height: auto;                 /* Adjust height for smaller screens */
+    width: 95%;                   /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 10px;               /* Reduce padding on very small screens */
+    width: 100%;                 /* Full width on very small screens */
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .queue-diagram-visual-horizontal {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tree-node {
+        margin: 5px 0;
+        width: 100%; /* Ensure tree nodes take full width */
+    }
+
+    .children {
+        flex-direction: column; /* Stack children vertically */
+    }
+
+    .left-child, .right-child {
+        width: 100%; /* Full width for children nodes */
+        text-align: center; /* Center text for children nodes */
+    }
+}
+
+@media (max-width: 768px) {
+    .children {
+        flex-direction: column; /* Stack children vertically */
+    }
+
+    .left-child, .right-child {
+        width: 100%; /* Full width for children nodes */
+        text-align: center; /* Center text for children nodes */
+    }
+
+    .tree-node {
+        margin: 5px 0;  /* Reduced margin for compact view */
+    }
 }
