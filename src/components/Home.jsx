@@ -27,27 +27,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Binary Search Tree Visualization</h1>
-      <input 
-        type="text" 
-        value={number} 
-        onChange={(e) => setNumber(e.target.value)} 
-        placeholder="Enter a number" 
-      />
-      <button onClick={handleInsert}>Insert</button>
-
-      <h3>Results:</h3>
-      <div>
-        <p>Inorder Traversal: {traversalResults.inorder}</p>
-        <p>Preorder Traversal: {traversalResults.preorder}</p>
-        <p>Postorder Traversal: {traversalResults.postorder}</p>
-      </div>
-
-      <h3>Binary Search Tree Diagram:</h3>
-      {/* You would implement a graphic representation of the tree here */}
-      <div className="tree-diagram">
-        {/* Visualization code goes here */}
-      </div>
     </div>
   );
 };
