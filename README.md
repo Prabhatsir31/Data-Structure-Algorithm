@@ -79,19 +79,3 @@ This project is licensed under the MIT License.
 Inspired by computer science courses, coding interview preparation guides, and the open-source community.
 
 ---
-
-### 4. Customize as Needed
-- Add or remove features/topics as appropriate.
-- Update links (screenshots, demo, etc.).
-- Add your name or contributors if desired.
-
-### 5. Commit Changes
-- Click "Commit changes" at the bottom of the editor.
-
-### 6. Preview and Update
-- Review the README on your repo’s main page.
-- Edit as needed for clarity, formatting, or more details.
-
----
-
-You’re done! Your README.md now gives visitors a clear overview, usage instructions, and links to resources just like the project website. Let me know if you want a more customized template or if you want to copy the exact content from a specific section of your site.
