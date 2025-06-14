@@ -65,8 +65,6 @@ Contributions and suggestions are welcome!
 - Push to the branch: `git push origin my-feature`
 - Open a pull request
 
-Check out [CONTRIBUTING.md](CONTRIBUTING.md) if available.
-
 ## 🐞 Issues
 
 If you encounter bugs or have feature requests, please open an issue on [GitHub Issues](https://github.com/Prabhatsir31/Data-Structure-Algorithm/issues).
@@ -79,7 +77,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 - Inspired by leading computer science courses, coding interview prep guides, and open-source contributions.
 - Thanks to all contributors and the open-source community!
-
----
-
-Feel free to personalize further with project-specific details, add badges, or update screenshots and links as needed!
