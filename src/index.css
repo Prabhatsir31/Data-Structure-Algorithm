@@ -544,32 +544,42 @@ button:focus-visible {
     }
 }
 
+/* Home */
 .home {
-  text-align: center;
-  margin: 20px;
+  position: relative;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34; /* Background color */
+  overflow: hidden; /* Prevent bubbles from going out of view */
+  color: white; /* Text color */
+  font-size: 2rem; /* Text size */
 }
 
-input[type="text"] {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.bubble {
+  position: absolute;
+  width: 50px; /* Width of the bubble */
+  height: 50px; /* Height of the bubble */
+  background-color: #61dafb; /* Bubble color */
+  border-radius: 50%; /* Makes it a circle */
+  animation: moveBubble 5s infinite; /* Animation effect */
 }
 
-button {
-  padding: 10px 15px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #218838;
-}
-
-.tree-diagram {
-  margin-top: 20px;
-  /* Add additional styling for the tree visualization */
+@keyframes moveBubble {
+  0% {
+    transform: translateY(0) translateX(0); /* Initial position */
+  }
+  25% {
+    transform: translateY(-200px) translateX(200px); /* Move up and to the right */
+  }
+  50% {
+    transform: translateY(0) translateX(-200px); /* Move back to the bottom */
+  }
+  75% {
+    transform: translateY(200px) translateX(200px); /* Move down and to the right */
+  }
+  100% {
+    transform: translateY(0) translateX(0); /* Move back to the starting point */
+  }
 }
