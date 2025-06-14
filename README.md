@@ -15,7 +15,8 @@ Copy and paste the following template. Edit each section to reflect your project
 ```markdown
 # Data Structure & Algorithm
 
-A comprehensive collection of data structures and algorithms, with interactive visualizations and explanations. Explore, learn, and practice essential concepts for coding interviews and computer science fundamentals.
+A comprehensive collection of data structures and algorithms, with interactive visualizations 
+and explanations. Explore, learn, and practice essential concepts for coding interviews and computer science fundamentals.
 
 ## 🌟 Features
 
