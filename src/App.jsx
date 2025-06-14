@@ -52,7 +52,7 @@ const App = () => {
         return <div 
         // style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1.25rem', color: '#666' }}
         >
-          Please select a data structure to view operations.
+          {/* Please select a data structure to view operations. */}
           <Home />
         </div>;
     }
