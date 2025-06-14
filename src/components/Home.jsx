@@ -4,8 +4,8 @@ import '../index.css'; // Ensure this file contains the styles
 const Home = () => {
   return (
     <div className="home">
-      <div className="bubble"></div>
-        Hello World
+      <img src="/workspaces/Data-Structure-Algorithm/public/vite.svg" alt="" srcset="" />
+        
     </div>
   );
 };
