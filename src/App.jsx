@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import Stack from './components/Stack';
+import Queue from './components/Queue';
+import LinkedList from './components/LinkedList';
+import Tree from './components/Tree';
+import Graph from './components/Graph';
+import Searching from './components/Searching';
+import Sorting from './components/Sorting';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [selected, setSelected] = useState(null);
+
+  const renderComponent = () => {
+    switch (selected) {
+      case 'stack':
+        return <Stack />;
+      case 'queue-simple':
+      case 'queue-circular':
+      case 'queue-priority':
+        return <Queue type={selected} />;
+      case 'linkedList-singly':
+      case 'linkedList-circular':
+      case 'linkedList-doubly':
+      case 'linkedList-doublyCircular':
+        return <LinkedList type={selected} />;
+      case 'tree-bst':
+        return <Tree type={selected} />;
+      case 'graph-dijkstra':
+      case 'graph-primKruskal':
+      case 'graph-bellmanFord':
+      case 'graph-floydWarshall':
+      case 'graph-topologicalSort':
+      case 'graph-unionFind':
+        return <Graph type={selected} />;
+      case 'Sequential Search':
+      case 'Binary Search':
+        return <Searching type={selected} onBack={handleBack} />;
+      case 'Insertion Sort':
+      case 'Selection Sort':
+      case 'Bubble Sort':
+      case 'Heap Sort':
+      case 'Merge Sort':
+      case 'Quick Sort':
+      case 'Radix Sort':
+      case 'Bucket Sort':
+      case 'Counting Sort':
+        return <Sorting type={selected} onBack={handleBack} />;
+      default:
+        return <div style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1.25rem', color: '#666' }}>
+          Please select a data structure to view operations.
+        </div>;
+    }
+  };
+
+  const handleBack = () => {
+    setSelected(null); // Reset selection to go back to the main menu
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <Navbar selected={selected} onSelect={setSelected} onBack={handleBack} />
+      <main style={{ maxWidth: '900px', margin: '24px auto', padding: '0 16px' }}>
+        {renderComponent()}
+      </main>
+    </div>
+  );
+};
 
-export default App
+export default App;
