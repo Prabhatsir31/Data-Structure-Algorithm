@@ -1,7 +1,3 @@
-Here’s a polished and enhanced README.md for your repository. This version improves clarity, adds extra sections for maintainability and community, and includes tips for customization. You can copy, edit, and use this as your new README.md:
-
----
-
 # Data Structure & Algorithm
 
 A comprehensive collection of data structures and algorithms with interactive visualizations, clear explanations, and practical code examples. Learn, explore, and practice essential concepts for coding interviews and computer science fundamentals.
