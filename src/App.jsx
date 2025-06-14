@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Stack from './components/Stack';
@@ -8,6 +7,7 @@ import Tree from './components/Tree';
 import Graph from './components/Graph';
 import Searching from './components/Searching';
 import Sorting from './components/Sorting';
+import BinarySearchTree from './components/BinarySearchTree'; // Import the new component
 
 const App = () => {
   const [selected, setSelected] = useState(null);
@@ -27,6 +27,8 @@ const App = () => {
         return <LinkedList type={selected} />;
       case 'tree-bst':
         return <Tree type={selected} />;
+      case 'binary-search-tree': // New case for Binary Search Tree
+        return <BinarySearchTree onBack={handleBack} />;
       case 'graph-dijkstra':
       case 'graph-primKruskal':
       case 'graph-bellmanFord':
