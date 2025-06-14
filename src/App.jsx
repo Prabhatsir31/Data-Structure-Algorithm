@@ -8,6 +8,7 @@ import Tree from './components/Tree';
 import Graph from './components/Graph';
 import Searching from './components/Searching';
 import Sorting from './components/Sorting';
+import Home from './components/Home'; 
 
 const App = () => {
   const [selected, setSelected] = useState(null);
@@ -50,6 +51,7 @@ const App = () => {
       default:
         return <div style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1.25rem', color: '#666' }}>
           Please select a data structure to view operations.
+          <Home />
         </div>;
     }
   };
