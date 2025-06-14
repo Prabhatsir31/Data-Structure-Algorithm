@@ -134,7 +134,7 @@ const BinarySearchTree = ({ onBack }) => {
         <h4>Binary Search Tree Diagram:</h4>
         {renderTree(root) || <div>No elements in tree</div>}
       </div>
-
+      <br /><br />
       <button className="btn-back" onClick={onBack} style={{ marginTop: 16 }}>Back</button>
     </div>
   );
