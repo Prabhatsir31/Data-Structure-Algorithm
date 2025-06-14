@@ -543,4 +543,33 @@ button:focus-visible {
         flex-direction: column; /* Stack nodes vertically on small screens */
     }
 }
-   
+
+.home {
+  text-align: center;
+  margin: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.tree-diagram {
+  margin-top: 20px;
+  /* Add additional styling for the tree visualization */
+}
